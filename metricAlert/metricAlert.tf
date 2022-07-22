@@ -19,6 +19,6 @@ resource "azurerm_monitor_metric_alert" "rules" {
   }
 
   action {
-    action_group_id    = var.alert_action_group_id
+    action_group_id = var.alert_action_group_id
   }
 }

@@ -2,8 +2,8 @@ resource "azurerm_monitor_action_group" "main" {
   name                = var.action_group_name
   resource_group_name = var.resource_group_name
   short_name          = var.action_group_short_name
-  enabled = var.enabled
-  tags = var.action_group_tags
+  enabled             = var.enabled
+  tags                = var.action_group_tags
 
   dynamic "arm_role_receiver" {
     for_each = var.arm_role
@@ -54,15 +54,6 @@ resource "azurerm_monitor_action_group" "main" {
       use_common_alert_schema = email_receiver.value.use_common_alert_schema
     }
   }
-
-  # dynamic "event_hub_receiver" {
-  # for_each = var.event_hub
-  #     content {
-  #         name                    = event_hub_receiver.value
-  #         event_hub_id            = event_hub_receiver.value
-  #         use_common_alert_schema = event_hub_receiver.value
-  #     }
-  # }
 
   dynamic "itsm_receiver" {
     for_each = var.itsm

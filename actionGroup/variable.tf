@@ -22,7 +22,6 @@ variable "action_group_tags" {
 variable "enabled" {
   description = "(Optional) Whether this action group is enabled. If an action group is not enabled, then none of its receivers will receive communications."
   type        = bool
-  default     = true
 }
 
 variable "arm_role" {
@@ -32,7 +31,6 @@ variable "arm_role" {
     role_id                 = string #(Required) The arm role id.
     use_common_alert_schema = bool   #(Optional) Enables or disables the common alert schema.
   }))
-  default = []
 }
 
 variable "automation_runbook" {
@@ -46,7 +44,6 @@ variable "automation_runbook" {
     service_uri             = string #(Required) The URI where webhooks should be sent.
     use_common_alert_schema = bool   #(Optional) Enables or disables the common alert schema.
   }))
-  default = []
 }
 
 variable "azure_app_push" {
@@ -55,7 +52,6 @@ variable "azure_app_push" {
     name          = string #(Required) The name of the Azure app push receiver.
     email_address = string #(Required) The email address of the user signed into the mobile app who will receive push notifications from this receiver.
   }))
-  default = []
 }
 
 variable "azure_function" {
@@ -67,7 +63,6 @@ variable "azure_function" {
     http_trigger_url         = string #(Required) The http trigger url where http request sent to.
     use_common_alert_schema  = bool   #(Optional) Enables or disables the common alert schema.
   }))
-  default = []
 }
 
 variable "emails" {
@@ -77,7 +72,6 @@ variable "emails" {
     email_address           = string #(Required) The email address of this receiver.
     use_common_alert_schema = bool   #(Optional) Enables or disables the common alert schema.
   }))
-  default = []
 }
 
 # variable "event_hub" {
@@ -87,7 +81,6 @@ variable "emails" {
 #     event_hub_id            = string
 #     use_common_alert_schema = bool
 #   }))
-#   default = []
 # }
 
 variable "itsm" {
@@ -99,7 +92,6 @@ variable "itsm" {
     ticket_configuration = string #(Required) A JSON blob for the configurations of the ITSM action. CreateMultipleWorkItems option will be part of this blob as well.
     region               = string #(Required) The region of the workspace.
   }))
-  default = []
 }
 
 variable "logic_app" {
@@ -110,7 +102,6 @@ variable "logic_app" {
     callback_url            = string #(Required) The callback url where http request sent to.
     use_common_alert_schema = bool   #(Optional) Enables or disables the common alert schema.
   }))
-  default = []
 }
 
 variable "sms" {
@@ -120,7 +111,6 @@ variable "sms" {
     country_code = number #(Required) The country code of the SMS receiver.
     phone_number = number #(Required) The phone number of the SMS receiver.
   }))
-  default = []
 }
 
 variable "voice" {
@@ -130,7 +120,6 @@ variable "voice" {
     country_code = string #(Required) The country code of the voice receiver.
     phone_number = string #(Required) The phone number of the voice receiver.
   }))
-  default = []
 }
 
 variable "webhooks" {
@@ -140,5 +129,4 @@ variable "webhooks" {
     service_uri             = string #(Required) The URI where webhooks should be sent.
     use_common_alert_schema = bool   #(Optional) Enables or disables the common alert schema.
   }))
-  default = []
 }

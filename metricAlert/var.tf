@@ -19,18 +19,13 @@ variable "alert_name" {
   description = "(Required) The name of the Metric Alert. Changing this forces a new resource to be created."
 }
 
-variable "alert_description" {
-  type        = string
-  description = "demo alert"
-}
-
 variable "alert_scopes" {
   type        = list(string)
   description = "(Required) A set of strings of resource IDs at which the metric criteria should be applied."
 }
 
 variable "alert_description" {
-  type    = string
+  type        = string
   description = "(Optional) Description of metric alert description"
 }
 
